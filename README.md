@@ -12,3 +12,9 @@ Since the days are much longer than nights in Australia, the relay is configured
 | ----------- | ----------- | ----------- |
 | Unlatched (i.e. Daytime) | Min: <10mA Max: 150mA | Avg: 0.2W |
 | Latched (i.e. Nighttime) | Min: 70mA Max: 150mA | Avg: 1.5W |
+
+## Future improvements
+
+1. Currently using an LM7805 which should be swapped to a more efficient voltage regulator
+2. The board contains two unnecessary LEDs which should be removed.
+3. Utilising the ESP8266 Deep Sleep function but this requires challenging soldering of the board to enable.
