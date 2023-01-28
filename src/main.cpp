@@ -32,7 +32,7 @@ void saveSunset() {
       Serial.println("API Sunrise: " + (String)json["results"]["sunrise"]);
       Serial.println("API Sunset: " + (String)json["results"]["sunset"]);
     }
-    
+
     // save sunrise/sunset times
     strptime(json["results"]["sunrise"], "%Y-%m-%dT%H:%M:%S", &sunrise);
     strptime(json["results"]["sunset"], "%Y-%m-%dT%H:%M:%S", &sunset);
@@ -67,10 +67,10 @@ void toggleRelay() {
   }
 
   if (timeClient.getFormattedTime() > sunriseString || timeClient.getFormattedTime() < sunsetString) {
-    digitalWrite(RELAY, LOW);
+    digitalWrite(RELAY, HIGH);
     Serial.println("Daytime. Relay toggled off");
   } else {
-    digitalWrite(RELAY, HIGH);
+    digitalWrite(RELAY, LOW);
     Serial.println("Nighttime. Relay toggled on");
   }
 }
